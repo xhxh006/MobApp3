@@ -3,6 +3,9 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
+        android:id="@+id/gogo"
+        android:title="계산기로 gogo" />
+    <item
         android:title="배경색 변경"
         app:showAsAction="collapseActionView">
         <menu>
@@ -19,14 +22,16 @@
     </item>
     <item
         android:id="@+id/meturn"
-    android:title="그림 30도 회전" />
+        android:title="그림 30도 회전" />
     <group android:checkableBehavior="all">
         <item
-            android:id="@+id/metitle"
+            android:id="@+id/metle"
+            android:checked="false"
             android:title="제목 보이기"
             ></item>
         <item
             android:id="@+id/memag"
+            android:checked="false"
             android:title="그림 2배 확대하기">
 
         </item>
@@ -34,11 +39,13 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/mechicken"
+            android:checked="false"
             android:title="치킨 선택">
 
         </item>
         <item
             android:id="@+id/mepasta"
+            android:checked="false"
             android:title="스파게티 선택">
 
         </item>

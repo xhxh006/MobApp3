@@ -17,6 +17,8 @@ public class Main2Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
 
+        init();
+
     }
 
     void init(){
@@ -27,8 +29,8 @@ public class Main2Activity extends AppCompatActivity {
         .setContent(new TabHost.TabContentFactory() {
             @Override
             public View createTabContent(String tag){
-                View biew = View.inflate(Main2Activity.this,R.layout.activity_main3,null);
-                return biew;
+                View view = View.inflate(Main2Activity.this,R.layout.activity_main3,null);
+                return view;
             }
         }));
     }
@@ -36,12 +38,14 @@ public class Main2Activity extends AppCompatActivity {
         if (v.getId() == R.id.button){
             e1 = (EditText)findViewById(R.id.editText);
             e2 = (EditText)findViewById(R.id.editText2);
-            t1 = (TextView)findViewById(R.id.textView12);
+            t1 = (TextView)findViewById(R.id.textView10);
+            t2 = (TextView)findViewById(R.id.textView13);
 
             String hight = e1.getText().toString();
             String weight = e2.getText().toString();
 
-            int bmi = Integer.parseInt(weight) / (Integer.parseInt(hight)*Integer.parseInt(hight));
+
+            Float bmi = Integer.parseInt(weight) / ((Float.parseFloat(hight)/100)*(Float.parseFloat(hight)/100));
             if (bmi < 18.5){
                 t1.setText("체중 미달입니다.");
             }
@@ -58,16 +62,18 @@ public class Main2Activity extends AppCompatActivity {
     }
     public void onTransClick(View v){
         e3 = (EditText)findViewById(R.id.editText3);
-        t2 = (TextView)findViewById(R.id.textView13)
-        int num = Integer.parseInt(e1.getText().toString());
+        t2 = (TextView)findViewById(R.id.textView13);
+        Float num = Float.parseFloat(e3.getText().toString());
 
         if(v.getId() == R.id.button2){
             double result = num * 3.305785;
-            t1.setText(String.format("%.2f제곱미터입니다아아아",result));
+            String result2 = String.format("%.2f",result);
+            t2.setText(result2+"제곱미터입니다.");
         }
         else if(v.getId() == R.id.button3){
             double result = num * 0.3025;
-            t1.setText(String.format("%.0f평입니다.",result));
+            String result2 = String.format("%.0f",result);
+            t2.setText(result2+"평입니다.");
 
         }
 

@@ -42,7 +42,6 @@
 
             <ImageView
                 android:id="@+id/imageView2"
-                android:onClick="onTransClick"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:layout_marginEnd="10dp"
@@ -61,6 +60,7 @@
 
         <Button
             android:id="@+id/button2"
+            android:onClick="onTransClick"
             android:layout_margin="10dp"
             android:textSize="20dp"
             android:layout_width="match_parent"
@@ -69,6 +69,7 @@
 
         <Button
             android:id="@+id/button3"
+            android:onClick="onTransClick"
             android:layout_margin="10dp"
             android:textSize="20dp"
             android:layout_width="match_parent"
